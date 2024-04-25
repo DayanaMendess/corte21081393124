@@ -1,0 +1,24 @@
+@startuml
+
+class CategoriaCarros{
+    - int : id
+    - String : nombre
+    - String : descripcion
+    - String : caracteristica
+    
+}
+
+class Autos{
+    - int : id
+    - String : marca
+    - String : modelo
+    - String : año
+    - String : precio
+}
+class Personas{
+    - int: id
+    -String: nombre
+}
+
+Personas "1" -- "*" Autos : contiene
+@enduml
