@@ -1,24 +1,39 @@
 @startuml
 
 class CategoriaCarros{
-    - int : id
-    - String : nombre
-    - String : descripcion
-    - String : caracteristica
+    - int : Id
+    - String : Nombre
+    - String : Descripcion
+    - String : Caracteristica
     
 }
 
 class Autos{
-    - int : id
-    - String : marca
-    - String : modelo
-    - String : año
-    - String : precio
-}
-class Personas{
-    - int: id
-    -String: nombre
+    - int : Id
+    - String : Marca
+    - String : Modelo
+    - String : Año
+    - String : Precio
+    - Categoria: Categoria_Id
 }
 
-Personas "1" -- "*" Autos : contiene
+class Personas{
+    - int: Id
+    - String: Nombre
+    - String: Apellido
+    - String: Edad 
+    - String: Genero 
+    - String: Direccion
+}
+
+class AutoPersonas{
+    - int: Id 
+    - String: Usuario
+    - Autos: Autos_Id
+    - Personas: Persona_Id
+}
+
+CategoriaCarros "1" -- "*" Autos : contiene
+Personas "1" -- "*" AutoPersonas : contiene
+Autos "1" -- "*" AutoPersonas : contiene 
 @enduml
